@@ -1,0 +1,35 @@
+/*-----------  Modificar la tabla --------------------------*/
+.styled-table {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.styled-table thead {
+  background-color: yellow;
+  color: black;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 8px 15px;  /* Más pequeño */
+  border-bottom: 1px solid blue;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+.styled-table tbody tr {
+  background-color: #e0f7fa; /* azul claro */
+}
+
+.styled-table tbody tr:hover {
+  background-color: #f1f1f1;
+}

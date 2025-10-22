@@ -1,0 +1,21 @@
+.boton-ecogo {
+  background-color: yellow;/* #28a745; /* Verde reciclaje */
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.boton-ecogo:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.boton-ecogo:active {
+  background-color: #1e7e34;
+  transform: scale(0.98);
+}

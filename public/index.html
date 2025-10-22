@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recicladora EcoGo</title>
+
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style_checkbox.css">
+  <link rel="stylesheet" href="./assets/css/style_BotonEliminar.css">
+  <link rel="stylesheet" href="./assets/css/style_tabla.css">
+  <link rel="stylesheet" href="./assets/css/style_IngresarDatos.css">
+  <link rel="stylesheet" href="./assets/css/style_ConfBotones(input).css">
+  <link rel="stylesheet" href="./assets/css/style_Img.css">
+  <link rel="stylesheet" href="./assets/css/style_Enviar.css"> 
+  <link rel="stylesheet" href="./assets/css/style_P.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main>
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./assets/images/EcoGo.png" alt="EcoGo Logo" width="80">
+        </figure>
+        <div class="info-content">
+          <h1 class="name" title="EcoGo">EcoGo</h1>
+          <p class="title">Menu de la recicladora</p>
+        </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Ingresar Datos</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+      <div class="sidebar-info_more">
+       <form method="post"  class="login">
+        <center>
+          <br>
+          <label class="LC">Nombre del cliente</label>
+          <input name="nc" type="text">
+
+          <label class="LC">Nombre del vendedor</label>
+          <input name="v" type="text">
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="opcion1" />
+            <span class="checkmark"></span>
+            <div class="input-fields">
+              <i class="LC">Fierro</i>
+              <input type="number" name="cantidad1" placeholder="Cantidad (kg)">
+            </div>
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="opcion2" />
+            <span class="checkmark"></span>
+            <div class="input-fields">
+              <i class="LC">Plástico</i>
+              <input type="number" name="cantidad2" placeholder="Cantidad (kg)">
+            </div>
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" name="opcion3" />
+            <span class="checkmark"></span>
+            <div class="input-fields">
+              <i class="LC">Cartón</i>
+              <input type="number" name="cantidad3" placeholder="Cantidad (kg)">
+            </div>
+          </label>
+
+          <button type="button" class="B">
+            <div class="T">
+              <div class="top">
+                <div class="paper"></div>
+              </div>
+              <div class="Box"></div>
+              <div class="check">
+                <svg viewBox="0 0 8 6">
+                  <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
+                </svg>
+              </div>
+            </div>
+            <span>Eliminar</span>
+          </button>
+
+          <script>
+            document.querySelectorAll('.B').forEach(button => button.addEventListener('click', e => {
+              if (!button.classList.contains('delete')) {
+                button.classList.add('delete');
+                setTimeout(() => button.classList.remove('delete'), 3200);
+              }
+            }));
+          </script>
+
+          <br><br>
+
+          <button type="submit" class="boton-ecogo">Enviar</button>
+        </center>
+      </form>
+      </div>
+    </aside>
+
+    <div class="main-content">
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>Ventas</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Editar</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Eliminar</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Consultar Precios</button> 
+          </li>
+        </ul>
+
+      </nav>
+
+      <div id="page-content-container">
+        </div>
+      </div>
+
+  </main>
+
+<script type="module" src="./assets/js/core.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

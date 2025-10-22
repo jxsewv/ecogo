@@ -1,0 +1,52 @@
+/* Oculta el checkbox nativo */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+/* Contenedor del checkbox */
+.custom-checkbox {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  display: inline-block;
+}
+  .input-fields input::placeholder {
+    color: white;  /* Verde */
+    opacity: 1;
+  }
+  
+/* Estilo del checkbox personalizado */
+.custom-checkbox .checkmark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  box-shadow: inset 0 0 0 2px #999;
+}
+/* Si el checkbox está marcado */
+.custom-checkbox input:checked + .checkmark {
+  background-color: #28a745;
+  box-shadow: inset 0 0 0 2px #28a745;
+}
+/* Dibuja la palomita (✔) */
+.custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+/* Muestra la palomita si está marcado */
+.custom-checkbox input:checked + .checkmark::after {
+  display: block;
+}
