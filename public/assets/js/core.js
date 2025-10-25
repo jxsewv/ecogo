@@ -75,7 +75,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-// Inicialización: Carga la vista 'Ventas' al cargar la página por primera vez
+// Inicialización: Carga la vista 'Ventas' al cargar la página por primera vezs
 window.addEventListener('load', () => {
     if (navigationLinks.length > 0) {
         loadView('Ventas'); 
