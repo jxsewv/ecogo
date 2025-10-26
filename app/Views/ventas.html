@@ -1,46 +1,159 @@
-<article class="ventas active" data-page="ventas">
+<article class="ventas" data-page="ventas">
+  <header>
+    <h2 class="h2 article-title">Ventas Registradas</h2>
+  </header>
 
-    <header>
-      <h2 class="h2 article-title">Ventas</h2>
-    </header>
+  <div class="ventas-container">
+    <!-- Botón para refrescar -->
+    <div class="ventas-header">
+      <button class="btn-refresh" id="btnRefrescarVentas">
+        <ion-icon name="refresh-outline"></ion-icon> Actualizar
+      </button>
+    </div>
 
-    <table class="styled-table">
-      <thead>
-        <tr>
-          <th>Nombre cliente</th>
-          <th>Fecha</th>
-          <th>Hora</th>
-          <th>Plastico <br>si/no</th>
-          <th>Cantidad</th>
-          <th>Fierro<br>si/no</th>
-          <th>Cantidad</th>
-          <th>Carto<br>si/no</th>
-          <th>Cantidad</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Mensaje de loading -->
+    <div id="ventasLoading" class="loading-container" style="display:none;">
+      <p>Cargando ventas...</p>
+    </div>
+
+    <!-- Tabla de ventas -->
+    <div class="table-container">
+      <table class="styled-table" id="tablaVentas">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Vendedor</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Fierro (kg)</th>
+            <th>Plástico (kg)</th>
+            <th>Cartón (kg)</th>
+            <th>Total ($)</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="ventasTableBody">
+          <!-- Las filas se cargarán dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mensaje si no hay ventas -->
+    <div id="noVentasMessage" class="no-data-message" style="display:none;">
+      <p>No hay ventas registradas. ¡Registra tu primera venta desde el menú lateral!</p>
+    </div>
+  </div>
 </article>
+
+<style>
+.ventas-container {
+  padding: 20px;
+}
+
+.ventas-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-refresh {
+  background: var(--bg-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  border: 1px solid var(--jet);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn-refresh:hover {
+  background: var(--border-gradient-onyx);
+  transform: translateY(-2px);
+}
+
+.loading-container {
+  text-align: center;
+  padding: 40px;
+  color: var(--light-gray);
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-gradient-onyx);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--jet);
+}
+
+.styled-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.styled-table tbody tr:hover {
+  background: rgba(255, 202, 40, 0.05);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit, .btn-delete {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-edit {
+  background: #2196F3;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #1976D2;
+}
+
+.btn-delete {
+  background: #f44336;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #d32f2f;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 40px;
+  color: var(--light-gray);
+  font-size: 16px;
+}
+</style>
