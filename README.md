@@ -1,4 +1,4 @@
-# vCard Portfolio MVC
+# EcoGo
 
 ## Descripción
 Este proyecto es una aplicación web de portafolio que sigue el patrón de diseño Modelo-Vista-Controlador (MVC). Permite a los usuarios ver una lista de proyectos y obtener detalles sobre cada uno de ellos.
